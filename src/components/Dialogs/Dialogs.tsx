@@ -8,6 +8,7 @@ export function Dialogs() {
     return (
         <div>
             Dialogs
+            <button>+</button>
         </div>
     )
 }
