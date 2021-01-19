@@ -9,6 +9,7 @@ export function MyPosts() {
             <div>
                 <textarea></textarea>
                 <button>Add post</button>
+                <button>Add post1</button>
             </div>
             <div className={s.posts}>
                 <Post message={"Hi, how are you?"} likesCount={0}/>
