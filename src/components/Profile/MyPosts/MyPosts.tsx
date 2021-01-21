@@ -1,18 +1,29 @@
 import React from 'react';
 import s from './MyPosts.module.css'
 import {Post} from "./Post/Post";
+import {PostsType, StateType} from "../../../index";
 
-export function MyPosts() {
+
+type PropsType = {
+    state: StateType
+}
+
+export function MyPosts(props: PropsType) {
+
+
+    let postsElement = props.state.posts.map(p => <Post message={p.message} likesCount={p.likesCount}/>)
+
     return (
         <div>
             my posts
             <div>
                 <textarea></textarea>
-                <button>Add post</button>
+                <div>
+                    <button>Add post</button>
+                </div>
             </div>
             <div className={s.posts}>
-                <Post message={"Hi, how are you?"} likesCount={0}/>
-                <Post message={"It's my first post"} likesCount={20}/>
+                {postsElement}
             </div>
         </div>
     )

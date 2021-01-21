@@ -1,17 +1,18 @@
 import React from 'react';
-import s from './Profile.module.css'
 import {MyPosts} from "./MyPosts/MyPosts";
+import {ProfileInfo} from "./ProfileInfo/ProfileInfo";
+import {StateType} from "../../index";
 
-export function Profile() {
+type PropsType = {
+    state: StateType
+}
+
+export function Profile(props: PropsType) {
+
     return (
         <div>
-            <div>
-                <img src='https://www.talkwalker.com/images/2020/blog-headers/image-analysis.png'/>
-            </div>
-            <div>
-                ava + description
-            </div>
-            <MyPosts/>
+            <ProfileInfo/>
+            <MyPosts state={props.state} />
         </div>
     )
 }
