@@ -19,6 +19,7 @@ export function Dialogs(props: PropsType) {
             <div className={s.dialogsItems}>
                 {dialogsElements}
             </div>
+
             <div className={s.messages}>
                 {messagesElements}
             </div>

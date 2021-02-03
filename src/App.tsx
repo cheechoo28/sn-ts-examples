@@ -13,6 +13,7 @@ import {StateType} from "./Redux/State";
 
 type PropsType = {
     state: StateType
+    addPost: (postMassage: string) => void
 }
 
 function App(props: PropsType) {
@@ -24,7 +25,7 @@ function App(props: PropsType) {
                 <Navbar/>
                 <div className='app-wrapper-content'>
                     <Route path={'/dialogs'} render={() => <Dialogs state={props.state}/>}/>
-                    <Route path={'/profile'} render={() => <Profile state={props.state}/>}/>
+                    <Route path={'/profile'} render={() => <Profile state={props.state} addPost={props.addPost}/>}/>
                     <Route path={'/news'} render={() => <News/>}/>
                     <Route path={'/music'} render={() => <Music/>}/>
                     <Route path={'/settings'} render={() => <Settings/>}/>
