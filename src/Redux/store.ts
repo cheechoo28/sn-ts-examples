@@ -1,6 +1,5 @@
-import {addPostActionCreator, profileReducer, updateNewPostTextActionCreator} from "./profile-reducer";
-import {addMessageAC, dialogsReducer, updateNewMessageTextActionCreator} from "./dialogs-reducer";
-import {sidebarReducer} from "./sidebar-reducer";
+import {addPostActionCreator, updateNewPostTextActionCreator} from "./profile-reducer";
+import {addMessageAC, updateNewMessageTextActionCreator} from "./dialogs-reducer";
 
 
 export type PostsType = {
@@ -41,14 +40,13 @@ export type ActionsTypes =
     | ReturnType<typeof updateNewMessageTextActionCreator>
 
 
-export type StoreType = {
-    _state: StateType
-    subscribe: (observer: () => void) => void
-    getState: () => StateType
-    _callSubscriber: () => void
-    dispatch: (action: ActionsTypes) => void
-
- }
+// export type StoreType = {
+//     _state: StateType
+//     subscribe: (observer: () => void) => void
+//     getState: () => StateType
+//     _callSubscriber: () => void
+//     dispatch: (action: ActionsTypes) => void
+ //}
 // export let store: StoreType = {
 //     _state: {
 //         profilePage: {
