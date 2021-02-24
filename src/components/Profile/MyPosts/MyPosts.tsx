@@ -1,19 +1,10 @@
 import React, {ChangeEvent} from 'react';
 import s from './MyPosts.module.css'
 import {Post} from "./Post/Post";
-import {ProfilePageType} from "../../../Redux/store";
+import {MyPostsPropsType} from "./Post/MyPostsContainer";
 
-
-type PropsType = {
-    updateNewPostText: (newText: string) => void
-    addPost: () => void
-    profilePage: ProfilePageType
-}
-
-
-
-export function MyPosts(props: PropsType) {
-
+export function MyPosts(props: MyPostsPropsType) {
+debugger
     let postsElements = props.profilePage.posts.map(p => <Post message={p.message} likesCount={p.likesCount}/>)
 
     const onAddPost = () => {
@@ -21,6 +12,7 @@ export function MyPosts(props: PropsType) {
     }
 
     let onPostChange = (e: ChangeEvent<HTMLTextAreaElement>) => {
+debugger
         const newText = e.currentTarget.value
         props.updateNewPostText(newText)
     }

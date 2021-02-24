@@ -2,35 +2,35 @@ import {addPostActionCreator, updateNewPostTextActionCreator} from "./profile-re
 import {addMessageAC, updateNewMessageTextActionCreator} from "./dialogs-reducer";
 
 
-export type PostsType = {
-    id: number
-    message: string
-    likesCount: number
-}
-export type DialogsType = {
-    id: number
-    name: string
-}
-export type MessageType = {
-    id: number
-    message: string
-}
-export type DialogsPageType = {
-    messages: Array<MessageType>
-    dialogs: Array<DialogsType>
-    newMessageText: string
-}
-export  type ProfilePageType = {
-    posts: Array<PostsType>
-    newPostText: string
-}
-
-export type sideBarType = {}
-export type StateType = {
-    profilePage: ProfilePageType
-    dialogsPage: DialogsPageType
-    sidebar: Object
-}
+// type PostsType = {
+//     id: number
+//     message: string
+//     likesCount: number
+// }
+//  type DialogsType = {
+//     id: number
+//     name: string
+// }
+//  type MessageType = {
+//     id: number
+//     message: string
+// }
+// type DialogsPageType = {
+//     messages: Array<MessageType>
+//     dialogs: Array<DialogsType>
+//     newMessageText: string
+// }
+//   type ProfilePageType = {
+//     posts: Array<PostsType>
+//     newPostText: string
+// }
+//
+//  type sideBarType = {}
+//  type StateType = {
+//     profilePage: ProfilePageType
+//     dialogsPage: DialogsPageType
+//     sidebar: Object
+// }
 
 
 export type ActionsTypes =
@@ -39,14 +39,13 @@ export type ActionsTypes =
     | ReturnType<typeof addMessageAC>
     | ReturnType<typeof updateNewMessageTextActionCreator>
 
-
-// export type StoreType = {
-//     _state: StateType
-//     subscribe: (observer: () => void) => void
-//     getState: () => StateType
-//     _callSubscriber: () => void
-//     dispatch: (action: ActionsTypes) => void
- //}
+ // type StoreType = {
+ //    //_state: StateType
+ //    subscribe: (observer: () => void) => void
+ //    getState: () => StateType
+ //        //_callSubscriber: () => void
+ //    dispatch: (action: ActionsTypes) => void
+ // }
 // export let store: StoreType = {
 //     _state: {
 //         profilePage: {
