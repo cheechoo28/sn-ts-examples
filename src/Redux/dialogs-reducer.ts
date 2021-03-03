@@ -1,4 +1,3 @@
-import {ActionsTypes} from "./store";
 
 const ADD_MESSAGE = "ADD-MESSAGE";
 const UPDATE_NEW_MESSAGE_TEXT = "UPDATE-NEW-MESSAGE-TEXT";
@@ -80,3 +79,7 @@ export const updateNewMessageTextActionCreator = (newMessage: string) => {
         newMessage
     } as const
 }
+
+export type ActionsTypes =
+    | ReturnType<typeof addMessageAC>
+    | ReturnType<typeof updateNewMessageTextActionCreator>

@@ -33,11 +33,11 @@ import {addMessageAC, updateNewMessageTextActionCreator} from "./dialogs-reducer
 // }
 
 
-export type ActionsTypes =
-    ReturnType<typeof addPostActionCreator>
-    | ReturnType<typeof updateNewPostTextActionCreator>
-    | ReturnType<typeof addMessageAC>
-    | ReturnType<typeof updateNewMessageTextActionCreator>
+// export type ActionsTypes =
+//     ReturnType<typeof addPostActionCreator>
+//     | ReturnType<typeof updateNewPostTextActionCreator>
+//     | ReturnType<typeof addMessageAC>
+//     | ReturnType<typeof updateNewMessageTextActionCreator>
 
  // type StoreType = {
  //    //_state: StateType
