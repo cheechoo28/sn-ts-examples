@@ -7,13 +7,17 @@ type LocationType = {
     country: string
 }
 
+type PhotosType = {
+    small: string
+    large: string
+}
 export type UsersType = {
     id: number
-    fullName: string
+    name: string
     status: string
     location: LocationType
     followed: boolean
-    photoUrl: string
+    photos: PhotosType
 }
 
 export type InitialStateType = {
@@ -70,7 +74,7 @@ export const unFollowAC = (userId: number) => {
         userId
     } as const
 }
-export const setUsersAC = (users: any) => {
+export const setUsersAC = (users: Array<UsersType>) => {
     return {
         type: SET_USERS,
         users

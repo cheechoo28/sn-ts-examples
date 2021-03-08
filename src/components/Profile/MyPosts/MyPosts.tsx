@@ -12,7 +12,7 @@ debugger
     }
 
     let onPostChange = (e: ChangeEvent<HTMLTextAreaElement>) => {
-debugger
+
         const newText = e.currentTarget.value
         props.updateNewPostText(newText)
     }
