@@ -3,6 +3,7 @@ const UNFOLLOW = "UNFOLLOW";
 const SET_USERS = "SET-USERS"
 const SET_CURRENT_PAGE = "SET-CURRENT-PAGE"
 const SET_TOTAL_USER_COUNT = "SET-TOTAL-USER-COUNT"
+const SET_TOGGLE_IS_FETCHING = "TOGGLE-IS-FETCHING"
 
 type LocationType = {
     city: string
@@ -27,6 +28,7 @@ export type InitialStateType = {
     pageSize: number
     totalUsersCount: number
     currentPage: number
+    isFetching: boolean
 }
 
 
@@ -34,7 +36,8 @@ let initialState: InitialStateType = {
     users: [],
     pageSize: 100,
     totalUsersCount: 0,
-    currentPage: 1
+    currentPage: 1,
+    isFetching: false
 
 }
 
@@ -75,6 +78,11 @@ export const usersReducer = (state: InitialStateType = initialState, action: Act
                 ...state,
                 totalUsersCount: action.totalUsersCount
             }
+        case SET_TOGGLE_IS_FETCHING:
+            return {
+                ...state,
+                isFetching: action.value
+            }
         default:
             return state
     }
@@ -87,7 +95,6 @@ export const followAC = (userId: number) => {
     } as const
 }
 export const unFollowAC = (userId: number) => {
-
     return {
         type: UNFOLLOW,
         userId
@@ -99,18 +106,22 @@ export const setUsersAC = (users: Array<UsersType>) => {
         users
     } as const
 }
-
 export const setCurrentPageAC = (currentPage: number) => {
     return {
         type: SET_CURRENT_PAGE,
         currentPage
     } as const
 }
-
 export const setTotalUsersCountAC = (totalUsersCount: number) => {
     return {
         type: SET_TOTAL_USER_COUNT,
         totalUsersCount
+    } as const
+}
+export const setToggleIsFetchingValueAC = (value: boolean) => {
+    return {
+        type: SET_TOGGLE_IS_FETCHING,
+        value
     } as const
 }
 
@@ -119,5 +130,6 @@ type UnFollowTypeAC = ReturnType<typeof unFollowAC>
 type setUsersTypeAC = ReturnType<typeof setUsersAC>
 type SetCurrentPageAC = ReturnType<typeof setCurrentPageAC>
 type SetTotalUsersCountAC = ReturnType<typeof setTotalUsersCountAC>
+type SetToggleIsFetchingValueAC = ReturnType<typeof setToggleIsFetchingValueAC>
 
-type ActionsTypes = FollowTypeAC | UnFollowTypeAC | setUsersTypeAC | SetCurrentPageAC | SetTotalUsersCountAC
+type ActionsTypes = FollowTypeAC | UnFollowTypeAC | setUsersTypeAC | SetCurrentPageAC | SetTotalUsersCountAC | SetToggleIsFetchingValueAC
