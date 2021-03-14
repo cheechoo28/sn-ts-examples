@@ -4,7 +4,7 @@ import {Post} from "./Post/Post";
 import {MyPostsPropsType} from "./Post/MyPostsContainer";
 
 export function MyPosts(props: MyPostsPropsType) {
-debugger
+
     let postsElements = props.profilePage.posts.map(p => <Post message={p.message} likesCount={p.likesCount}/>)
 
     const onAddPost = () => {
@@ -12,7 +12,6 @@ debugger
     }
 
     let onPostChange = (e: ChangeEvent<HTMLTextAreaElement>) => {
-
         const newText = e.currentTarget.value
         props.updateNewPostText(newText)
     }
