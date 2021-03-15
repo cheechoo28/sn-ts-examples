@@ -2,15 +2,14 @@ import React from "react";
 import {connect} from "react-redux";
 import {StateType} from "../../Redux/redux-store";
 import {
-    followAC,
-    setCurrentPageAC,
-    setToggleIsFetchingValueAC,
-    setTotalUsersCountAC,
-    setUsersAC,
-    unFollowAC,
+    follow,
+    setCurrentPage,
+    setToggleIsFetchingValue,
+    setTotalUsersCount,
+    setUsers,
+    unFollow,
     UsersType
 } from "../../Redux/users-reducer";
-import {Dispatch} from "redux";
 import axios from "axios";
 import {Users} from "./Users";
 import {Preloader} from "../common/Preloader/Preloader";
@@ -84,28 +83,36 @@ const mapStateToProps = (state: StateType): MapStatePropsType => {
     }
 }
 
-const mapDispatchToProps = (dispatch: Dispatch): MapDispatchPropsType => {
-    return {
-        follow: (userId: number) => {
-            dispatch(followAC(userId))
-        },
-        unFollow: (userId: number) => {
-            dispatch(unFollowAC(userId))
-        },
-        setUsers: (users: Array<UsersType>) => {
-            dispatch(setUsersAC(users))
-        },
-        setCurrentPage: (currentPage: number) => {
-            dispatch(setCurrentPageAC(currentPage))
-        },
-        setTotalUsersCount: (userCount: number) => {
-            dispatch(setTotalUsersCountAC(userCount))
-        },
-        setToggleIsFetchingValue: (value: boolean) => {
-            dispatch(setToggleIsFetchingValueAC(value))
-        }
-    }
-}
+// const mapDispatchToProps = (dispatch: Dispatch): MapDispatchPropsType => {
+//     return {
+//         follow: (userId: number) => {
+//             dispatch(followAC(userId))
+//         },
+//         unFollow: (userId: number) => {
+//             dispatch(unFollowAC(userId))
+//         },
+//         setUsers: (users: Array<UsersType>) => {
+//             dispatch(setUsersAC(users))
+//         },
+//         setCurrentPage: (currentPage: number) => {
+//             dispatch(setCurrentPageAC(currentPage))
+//         },
+//         setTotalUsersCount: (userCount: number) => {
+//             dispatch(setTotalUsersCountAC(userCount))
+//         },
+//         setToggleIsFetchingValue: (value: boolean) => {
+//             dispatch(setToggleIsFetchingValueAC(value))
+//         }
+//     }
+// }
 
-export default connect(mapStateToProps, mapDispatchToProps)(UsersContainer)
+
+export default connect(mapStateToProps, {
+    follow,
+    unFollow,
+    setUsers,
+    setCurrentPage,
+    setTotalUsersCount,
+    setToggleIsFetchingValue
+})(UsersContainer)
 

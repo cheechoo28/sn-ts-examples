@@ -88,48 +88,48 @@ export const usersReducer = (state: InitialStateType = initialState, action: Act
     }
 }
 
-export const followAC = (userId: number) => {
+export const follow = (userId: number) => {
     return {
         type: FOLLOW,
         userId
     } as const
 }
-export const unFollowAC = (userId: number) => {
+export const unFollow = (userId: number) => {
     return {
         type: UNFOLLOW,
         userId
     } as const
 }
-export const setUsersAC = (users: Array<UsersType>) => {
+export const setUsers = (users: Array<UsersType>) => {
     return {
         type: SET_USERS,
         users
     } as const
 }
-export const setCurrentPageAC = (currentPage: number) => {
+export const setCurrentPage = (currentPage: number) => {
     return {
         type: SET_CURRENT_PAGE,
         currentPage
     } as const
 }
-export const setTotalUsersCountAC = (totalUsersCount: number) => {
+export const setTotalUsersCount = (totalUsersCount: number) => {
     return {
         type: SET_TOTAL_USER_COUNT,
         totalUsersCount
     } as const
 }
-export const setToggleIsFetchingValueAC = (value: boolean) => {
+export const setToggleIsFetchingValue = (value: boolean) => {
     return {
         type: SET_TOGGLE_IS_FETCHING,
         value
     } as const
 }
 
-type FollowTypeAC = ReturnType<typeof followAC>
-type UnFollowTypeAC = ReturnType<typeof unFollowAC>
-type setUsersTypeAC = ReturnType<typeof setUsersAC>
-type SetCurrentPageAC = ReturnType<typeof setCurrentPageAC>
-type SetTotalUsersCountAC = ReturnType<typeof setTotalUsersCountAC>
-type SetToggleIsFetchingValueAC = ReturnType<typeof setToggleIsFetchingValueAC>
+type FollowTypeAC = ReturnType<typeof follow>
+type UnFollowTypeAC = ReturnType<typeof unFollow>
+type setUsersTypeAC = ReturnType<typeof setUsers>
+type SetCurrentPageAC = ReturnType<typeof setCurrentPage>
+type SetTotalUsersCountAC = ReturnType<typeof setTotalUsersCount>
+type SetToggleIsFetchingValueAC = ReturnType<typeof setToggleIsFetchingValue>
 
 type ActionsTypes = FollowTypeAC | UnFollowTypeAC | setUsersTypeAC | SetCurrentPageAC | SetTotalUsersCountAC | SetToggleIsFetchingValueAC
